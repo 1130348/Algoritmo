@@ -151,6 +151,15 @@ aStar2(Destino,[(_,Custo,[H|T])|Resto],Solucao,CustoSol):-
 distancia(X1,Y1,X2,Y2,Distancia):-
 			Distancia is sqrt((X1-X2)*(X1-X2)+(Y1-Y2)*(Y1-Y2)).
 
+quick_sort(List,Sorted):-q_sort(List,[],Sorted).
+q_sort([],Acc,Acc).
+q_sort([(Y,H,Orig,Dest)|T],Acc,Sorted):-pivoting(H,T,L1,L2),q_sort(L1,Acc,Sorted1),q_sort(L2,[(Y,H,Orig,Dest)|Sorted1],Sorted),!.			
+
+pivoting(_,[],[],[]).
+pivoting(H,[(Y,X,Orig,Dest)|T],[(Y,X,Orig,Dest)|L],G):- X>=H,pivoting(H,T,L,G).
+pivoting(H,[(Y,X,Orig,Dest)|T],L,[(Y,X,Orig,Dest)|G]):- X<H,pivoting(H,T,L,G).
+
+			
 %-----------------------------------------------Menor Quilometragem da Visita-----------------------------------------
 
 %distancia(km)
@@ -162,7 +171,6 @@ menorDistVisita(Origem,LstPoi,Solucao,Custo):-aStar(Origem,Solucao4,Custo,LstPoi
 											 write('Caminho com menor Quilometragem:'),
 											 imprime(Solucao),nl,!.
 											 
-
 aStar(_,[],0,[]).
 
 aStar(Origem,Solucao,Custo,[Destino|LstPoi]):-
@@ -216,7 +224,7 @@ aStarMnorDur(Destino,[(_,Custo,[Destino|T])|_],Solucao,Custo,_):-
 aStarMnorDur(Destino,[(_,Custo,[H|T])|Resto],Solucao,CustoSol,Velocidade):-
 			findall((CEC,C,[X,H|T]),
 					(	Destino\==H,
-						(liga(H,X,CX);liga(X,H,CX)),poi(N2,_,_,_,TmpVis),
+						(liga(H,X,CX);liga(X,H,CX)),poi(X,_,_,_,TmpVis),
 						\+ member(X,[H|T]),
 						C is ((CX/ Velocidade)+(TmpVis/60))+Custo,
 						estimativaDur(X,Destino,Est,Velocidade),
@@ -225,5 +233,22 @@ aStarMnorDur(Destino,[(_,Custo,[H|T])|Resto],Solucao,CustoSol,Velocidade):-
 			append(Novos,Resto,Todos),
 			sort(Todos,LS),
 			aStarMnorDur(Destino,LS,Solucao,CustoSol,Velocidade).
+
+
+-----------------------------------------Geração de  Visitas de 4 ou 8 horas----------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
