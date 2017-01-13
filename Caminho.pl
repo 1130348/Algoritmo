@@ -14,236 +14,283 @@ categoria(5,'Música').
 categoria(6,'Teatro').
 
 
-%no_(id,gps_lat,gps_long,descricao).
+%noL(id,gps_lat,gps_long,descricao).
 
-rua(1,41.16177,-8.5857797,'Antas').
-rua(2,41.158881,-8.6328847,'Avenida da Boavista').
-rua(3,41.1410111,-8.617906,'Rua Infante D.Henrique').
-rua(4,41.1469917,-8.6076057,'Rua de Passos Manuel').
-rua(5,41.1483403,-8.6278264,'Rua de Dom Manuel II').
-rua(6,41.1407457,-8.6167303,'Rua da Alfandega').
-rua(7,41.1457899,-8.6164093,'Rua de São Filipe de Nery').
-rua(8,41.145607,-8.612715,'Praça de Almeida Garret').
-rua(9,41.142826,-8.6133723,'Terreiro da Sé').
-rua(10,41.1413772,-8.6178612,'Rua da Bolsa').
-rua(11,41.1431567,-8.6236837,'Rua Nova da Alfandega').
-rua(12,41.1477497,-8.6117241,'Praça D.João I').
-rua(13,41.1579742,-8.6313003,'Praça de Mouzinho Albuquerque').
-rua(14,41.1418164,-8.6170775,'Rua de Mouzinho Silveira').
-rua(15,41.1537401,-8.6448158,'Rua do Campo Alegre').
-rua(16,41.1686451,-8.6897382,'Via do Castelo do Queijo').
-rua(17,41.1469055,-8.6169633,'Rua das Carmelitas').
-rua(18,41.1597898,-8.6618548,'Avenida Marechal Gomes da Costa').
-rua(19,41.1685555,-8.6902649,'Praça de Gonçalves Zarco').
+:- dynamic noL/4.
 
-
-%poi(id,descricao,categoria,idLocal,DurVisita).
-
-poi(1,'Estádio do Dragão',1,1,45).
-poi(2,'Casa da Música',5,2,35).
-poi(3,'Torre dos Clérigos',4,7,15).
-poi(4,'Estação Ferroviária de Porto São Bento',4,8,30).
-poi(5,'Sé do Porto',4,9,25).
-poi(6,'Palácio da Bolsa',3,10,33).
-poi(7,'Museu Serralves',3,18,50).
-poi(8,'Forte de S.Franscisco do Queijo',2,19,15).
-poi(9,'Igreja de S.Franscisco',4,3,20).
-poi(10,'Coliseu do Porto',6,4,19).
-poi(11,'Palácio de Cristal',4,5,29).
-poi(12,'Casa do Infante',3,6,15).
-poi(13,'Alfandega do Porto',4,11,10).
-poi(14,'Teatro Rivoli',6,12,26).
-poi(15,'Rotunda da Boavista',2,13,10).
-poi(16,'Mercado Ferreira Borges',2,14,30).
-poi(17,'Jardim Botanico',2,15,60).
-poi(18,'Sealife Matosinhos',3,16,120).
-poi(19,'Livralia Lello',4,17,40).
+noL(1,41.1678,-8.6822,'Praça Gonçalves Zarco 1').
+noL(2,41.1623,-8.6555,'Avenida da Boavista 1').
+noL(3,41.1601,-8.6599,'Avenida Marechal Gomes da Costa').
+noL(4,41.1551,-8.6726,'Praça Império').
+noL(5,41.1519,-8.6779,'R.Cel.Raúl Peres').
+noL(6,41.1483,-8.6535,'Largo António Calem').
+noL(7,41.1511,-8.6565,'R.Dom Pedro de Meneses').
+noL(8,41.1541,-8.6424,'Rua do Campo Alegre 1216').
+noL(9,41.1598,-8.6406,'Avenida da Boavista 2').
+noL(10,41.1579,-8.6299,'Praça de Mouzinho de Albuquerque').
+noL(11,41.1526,-8.6322,'Rua do Campo Alegre 312').
+noL(12,41.1525,-8.6261,'Rua de Júlio Dinis 386').
+noL(13,41.1473,-8.6206,'Rua do Rosário').
+noL(14,41.1472,-8.6172,'Largo do Prof.Abel Salazar').
+noL(15,41.1464,-8.6143,'Rua das Carmelitas 100').
+noL(16,41.1447,-8.6268,'Rua de Monchique 110').
+noL(17,41.1407,-8.6155,'Rua Infante D.Henrique 109').
+noL(18,41.1429,-8.6117,'Terreiro da Sé').
+noL(19,41.1454,-8.6108,'Praça Almeida Garret').
+noL(20,41.1468,-8.6114,'Praça da Liberdade').
+noL(21,41.1472,-8.6079,'R.de Passos Manuel 40').
+noL(22,41.1512,-8.6043,'Rua da Alegria 299').
+noL(23,41.1594,-8.6011,'Rua da Alegria 889').
+noL(24,41.1613,-8.6002,'Rua da Constituição 204').
+noL(25,41.1535,-8.6099,'Rua de Camões 234').
+noL(26,41.1552,-8.6133,'Rua da Lapa').
+noL(27,41.1627,-8.6112,'Rua da Constituicao 1084').
+noL(28,41.1605,-8.5936,'R.Carlos Malheiro Dias 16').
+noL(29,41.1641,-8.5894,'Av.de Fernão de Magalhães 1700').
+noL(30,41.1622,-8.5853,'Via Futebol Clube do Porto 26').
+noL(31,41.1459,-8.6142,'R.de Sao Filipe de Nery').
+noL(32,41.1476,-8.6096,'R.do Dr.Magalhaes Lemos 83').
+noL(33,41.1416,-8.6145,'Rua da Bolsa 16').
+noL(34,41.1482,-8.6364,'Rua do Ouro').
+noL(35,41.1686,-8.6899,'Praça de Gonçalves Zarco 2').
+noL(36,41.1576,-8.5937,'Av.de Fernão de Magalhães 910').
+noL(37,41.1491,-8.5988,'Campo 24 de Agosto 31').
 
 
-%hora(idhora,hora,minuto)
-hora(1,8,0).
-hora(2,9,0).
-hora(3,10,0).
-hora(4,10,30).
-hora(5,11,0).
-hora(6,12,0).
-hora(7,14,20).
-hora(8,18,0).
 
-%horario(idPoi,idHoraAbertura,idHoraFecho)
-horario(1,1,6).
-horario(1,7,8).
+%liga(noInit,noFinal,distancia)
+:- dynamic liga/3.
 
-%....
+liga(1,35,0.18).
+liga(1,2,2.75).
+liga(1,5,1.96).
+liga(2,3,0.44).
+liga(2,9,1.29).
+liga(3,4,1.15).
+liga(4,5,0.50).
+liga(4,7,1.36).
+liga(5,6,2.07).
+liga(6,7,0.35).
+liga(6,34,1.62).
+liga(7,8,1.23).
+liga(8,9,0.63).
+liga(8,11,0.85).
+liga(9,10,0.87).
+liga(10,11,0.52).
+liga(10,12,0.53).
+liga(10,26,1.24).
+liga(11,12,0.50).
+liga(12,13,0.77).
+liga(13,14,0.23).
+liga(13,16,0.50).
+liga(14,15,0.22).
+liga(15,32,0.37).
+liga(15,31,0.07).
+liga(16,17,1.06).
+liga(16,34,0.79).
+liga(17,33,0.09).
+liga(18,20,0.33).
+liga(18,19,0.28).
+liga(18,33,0.31).
+liga(19,20,0.10).
+liga(19,21,1.09).
+liga(20,31,0.26).
+liga(21,32,0.48).
+liga(21,37,0.59).
+liga(21,22,1).
+liga(22,23,2).
+liga(23,24,0.25).
+liga(23,28,0.66).
+liga(24,27,0.60).
+liga(24,28,0.63).
+liga(25,26,0.25).
+liga(25,32,0.79).
+liga(26,27,0.72).
+liga(28,29,0.78).
+liga(28,36,0.40).
+liga(30,36,0.93).
+liga(36,37,1).
 
-%liga(poiInicio,poiFim,distancia). distancia(km)
+%poi(id,descricao,categoria,idLocal,DurVisita,idHorario).
 
-liga(8,18,0.19).
-liga(18,7,2.58).
-liga(7,2,2.44).
-liga(7,17,1.57).
-liga(7,15,2.57).
-liga(2,1,3.96).
-liga(2,15,0.16).
-liga(15,19,1.73).
-liga(15,13,1.79).
-liga(17,13,2.14).
-liga(13,9,0.53).
-liga(9,6,0.04).
-liga(9,5,0.43).
-liga(6,16,0.08).
-liga(16,5,0.20).
-liga(5,3,0.39).
-liga(5,4,0.32).
-liga(3,19,0.13).
-liga(3,14,0.43).
-liga(3,10,0.72).
-liga(4,10,0.45).
-liga(14,1,2.69).
-liga(10,1,2.68).
-liga(17,15,1.21).
-liga(13,3,0.69).
+poi(1,'Estádio do Dragão',1,30,45,1). 
+poi(2,'Casa da Música',5,10,35,1).
+poi(3,'Torre dos Clérigos',4,31,15,1).
+poi(4,'Estação Ferroviária de Porto São Bento',4,19,30,1).
+poi(5,'Sé do Porto',4,18,25,1).
+poi(6,'Palácio da Bolsa',3,17,33,1).
+poi(7,'Museu Serralves',3,3,50,1).
+poi(8,'Forte de S.Franscisco do Queijo',2,35,15,1).
+poi(9,'Igreja de S.Franscisco',4,33,20,1).
+poi(10,'Coliseu do Porto',6,21,19,1).
+poi(11,'Palácio de Cristal',4,12,29,1).
+poi(12,'Casa do Infante',3,17,15,1).
+poi(13,'Alfandega do Porto',4,16,10,1).
+poi(14,'Teatro Rivoli',6,32,26,1).
+poi(15,'Rotunda da Boavista',2,10,16,1).
+poi(16,'Marques',2,27,30,1).
+poi(17,'Jardim Botanico',2,11,60,1).
+poi(18,'Sealife Matosinhos',3,1,120,1).
+poi(19,'Livralia Lello',4,15,40,1).
 
-%---------------------------------------------Algoritmos Auxiliares-----------
+
+
+%horario(idHorario,horaAbertura,horaFecho)
+horario(1,540,1200).
+
+
+%----------------------------Ordenação de Lista de PontosPassagem------------------------------------
+
+
+sortList(Orig,ListPts,LstFinal):-calcEstimativa(Orig,ListPts,LstFinal4),
+								 quick_sort(LstFinal4,LstFinal5),
+								 rect(LstFinal5,LstFinal6),reverse(LstFinal6,LstFinal).
+
+
+rect([],[]).
+rect([(X,_)|LstFinal5],LstFinal):-rect(LstFinal5,LstFinal1),
+								  add(X,LstFinal1,LstFinal),!.
+
+calcEstimativa(_,[],[]).
+calcEstimativa(Orig,[P|ListPts],LstFinal):-poi(P,_,_,Dest,_,_),(liga(Orig,Dest,Valor);estimativa(Orig,Dest,Valor)),calcEstimativa(Orig,ListPts,LstFinal1),!,
+											add((P,Valor),LstFinal1,LstFinal),!.
+
+quick_sort(List,Sorted):-q_sort(List,[],Sorted).
+q_sort([],Acc,Acc).
+q_sort([(Y,H)|T],Acc,Sorted):-pivoting(H,T,L1,L2),q_sort(L1,Acc,Sorted1),q_sort(L2,[(Y,H)|Sorted1],Sorted),!.
+
+
+pivoting(_,[],[],[]).
+pivoting(H,[(Y,X)|T],[(Y,X)|L],G):- X>=H,pivoting(H,T,L,G).
+pivoting(H,[(Y,X)|T],L,[(Y,X)|G]):- X<H,pivoting(H,T,L,G).
+
+%-------------------------------------------------Menor Quilometragem da Visita-----------------------------------------
+
+%distancia(km)
+%tempo(minutos)
+
+menorDistVisita(Cx,Cy,LstPoi,Solucao,Custo):- IdOrigem is 0,
+											  assertz(noL(IdOrigem,Cx,Cy,'Origem')),
+											  sortList(Origem,LstPoi,NewList),
+											  ligaP(NewList,IdOrigem),
+											  aStar(Origem,Solucao,Custo,NewList),
+											  write('Caminho com menor Quilometragem:'),
+											  imprimeSolucao(Solucao),nl,
+											  retract(liga(IdOrigem,_,_)),
+											  retract(noL(IdOrigem,Cx,Cy,'Origem')),!.
+
+aStar(_,[],0,[]).
+aStar(Origem,Solucao,Custo,[IdPoi|LstPoi]):-  poi(IdPoi,_,_,Dest,_,_),
+											  estimativa(Origem,Dest,Estimativa),
+											  aStar2(Dest,[(Estimativa,0,[Origem])],Solucao1,Custo1),!,
+											  aStar(Dest,Solucao2,Custo2,LstPoi),
+											  Custo is Custo1+Custo2,
+											  checkRepetedElements(Solucao1,Solucao2,Solucao3),
+											  append(Solucao3,Solucao2,Solucao),!.
+
+%-----------------------------------------------------Menor Duracao da Visita-------------------------------------------------
+
+%distancia(km)
+%tempo(minutos)
+%Restricao de Velocidade e tempo
+
+menorDurVisita(Cx,Cy,LstPoi,Solucao,Custo,Velocidade,DurVisita):-IdOrigem is 0,
+															     assertz(noL(IdOrigem,Cx,Cy,'Origem')),
+																 sortList(IdOrigem,LstPoi,NewList),
+																 ligaP(NewList,IdOrigem),
+																 aStar3(IdOrigem,Solucao,Custo,0,NewList,Velocidade,DurVisita),nl,
+																 imprimeSolucao(Solucao),
+																 retract(liga(IdOrigem,_,_)),
+																 retract(noL(IdOrigem,Cx,Cy,'Origem')),!.
+
+
+																  
+aStar3(_,[],0,CustoAux,_,_,DurVisita):-(CustoAux>=DurVisita-0.5,CustoAux=<DurVisita+0.5),!.
+
+aStar3(Origem,Solucao,Custo,CustoAux,[IdPoi|LstPois],Velocidade,DurVisita):-
+														poi(IdPoi,X,_,Dest,Dur,_),
+														write(-----),write(X),write(---),nl,
+														estimativaDur(Origem,Dest,Estimativa,Velocidade),
+														aStarMnorDur(Dest,[(Estimativa,0,[Origem])],Solucao1,Custo1,Velocidade),!,
+														Custo5 is CustoAux+(Custo1)+(Dur/60),
+														aStar3(Dest,Solucao2,Custo2,Custo5,LstPois,Velocidade,DurVisita),
+														Custo is (Custo1+(Custo2)+(Dur/60)),
+														checkRepetedElements(Solucao1,Solucao2,Solucao3),
+														append(Solucao3,Solucao2,Solucao),!.
+aStar3(_,[],0,_,[],_,_):-write('finish').
+
+
+aStarMnorDur(Destino,[(_,Custo,[Destino|T])|_],Solucao,Custo,_):-
+											       reverse([Destino|T],Solucao).
+					
+aStarMnorDur(Destino,[(_,Custo,[H|T])|Resto],Solucao,CustoSol,Velocidade):-
+																findall((CEC,C,[X,H|T]),
+																(Destino\==H,
+																((liga(H,X,CX);liga(X,H,CX))),
+																\+ member(X,[H|T]),
+																C is (CX/ Velocidade)+Custo,
+																estimativaDur(X,Destino,Est,Velocidade),
+																CEC is Est + C),Novos),
+																append(Novos,Resto,Todos),
+																sort(Todos,LS),
+																aStarMnorDur(Destino,LS,Solucao,CustoSol,Velocidade).
+
+
+%---------------------------------------------------------GeraVisita------------------------------------------------------------------------			
+
+geraVisita(Cx,Cy,Solucao,Custo,Duracao,Velocidade):- findall(X,poi(X,_,_,_,_,_),List),
+													 menorDurVisita(Cx,Cy,List,Solucao,Custo,Velocidade,Duracao),nl,nl,!.
+									  
+													  
+								
+%-----------------------------------------------------Predicados Auxiliares--------------------------------------------------
+checkRepetedElements(Lst1,[],Lst1).
+checkRepetedElements(Lst1,[X|_],Lst3):-((last(Lst1,Y),X=Y,remove_last(Lst1,Lst3));(append(Lst1,[],Lst3))),!.
+
+remove_last([_], []).
+remove_last([X|Xs], [X|RemoveLast]) :-remove_last(Xs, RemoveLast),!.
+
+%Cria a ligacao entre a posicao origem do utilizador e o primeiro poi da visita.
+
+ligaP([P|_],IdOrigem):-estimativa(IdOrigem,P,Valor),assertz(liga(IdOrigem,P,Valor)).
+
+
+getListLocals([],[]).
+getListLocals([P|LstPoi],NewList):-poi(P,_,_,Id,_,_),getListLocals(LstPoi,NewList1),add(Id,NewList1,NewList),!.
 
 add(X,[],[X]).
 add(X,[Y|Tail],[Y|Tail1]):-add(X,Tail,Tail1).
 
-remove_duplicates([],[]).
+imprimeSolucao([]).													  
+imprimeSolucao([X|Solucao]):-noL(X,_,_,Y),write(Y),write(','),nl,nl,imprimeSolucao(Solucao),!.	
 
-remove_duplicates([H | T], List) :-    
-     member(H, T),
-     remove_duplicates( T, List).
-
-remove_duplicates([H | T], [H|T1]) :- 
-      \+member(H, T),
-      remove_duplicates( T, T1).
-
-remove_duplicates2([],[]).
-
-remove_duplicates2([H],[H]).
-
-remove_duplicates2([H ,H| T], List) :-remove_duplicates( [H|T], List).
-
-remove_duplicates2([H,Y | T], [H|T1]):- Y \= H,remove_duplicates( [Y|T], T1).
-
-imprime([]).
-imprime([X|Solucao]):-write(X),write(,),imprime(Solucao).
-
-converte(Distancia,Velocidade,Duracao):-Duracao is Distancia/ Velocidade.
 
 aStar2(Destino,[(_,Custo,[Destino|T])|_],Solucao,Custo):-
 					reverse([Destino|T],Solucao),!.
 
 aStar2(Destino,[(_,Custo,[H|T])|Resto],Solucao,CustoSol):-
-			findall((CEC,C,[X,H|T]),
-					(	Destino\==H,
-						(liga(H,X,CX);liga(X,H,CX)),
-						\+ member(X,[H|T]),
-						C is CX+Custo,
-						estimativa(X,Destino,Est),
-						CEC is Est + C),
-					Novos),
+			findall((CEC,C,[X,H|T]),(Destino\==H,(liga(H,X,CX);liga(X,H,CX)),
+			\+ member(X,[H|T]),C is CX+Custo,
+			estimativa(X,Destino,Est),CEC is Est + C),Novos),
 			append(Novos,Resto,Todos),
 			sort(Todos,LS),
 			aStar2(Destino,LS,Solucao,CustoSol).
 			
-distancia(X1,Y1,X2,Y2,Distancia):-
-			Distancia is sqrt((X1-X2)*(X1-X2)+(Y1-Y2)*(Y1-Y2)).
-
-quick_sort(List,Sorted):-q_sort(List,[],Sorted).
-q_sort([],Acc,Acc).
-q_sort([(Y,H,Orig,Dest)|T],Acc,Sorted):-pivoting(H,T,L1,L2),q_sort(L1,Acc,Sorted1),q_sort(L2,[(Y,H,Orig,Dest)|Sorted1],Sorted),!.			
-
-pivoting(_,[],[],[]).
-pivoting(H,[(Y,X,Orig,Dest)|T],[(Y,X,Orig,Dest)|L],G):- X>=H,pivoting(H,T,L,G).
-pivoting(H,[(Y,X,Orig,Dest)|T],L,[(Y,X,Orig,Dest)|G]):- X<H,pivoting(H,T,L,G).
-
-			
-%-----------------------------------------------Menor Quilometragem da Visita-----------------------------------------
-
-%distancia(km)
-%tempo(minutos)
+distancia(X1,Y1,X2,Y2,Distancia):-Distancia is (((X1-X2)*(X1-X2)+(Y1-Y2)*(Y1-Y2))).
+converte(Distancia,Velocidade,Duracao):-Duracao is (Distancia)/(Velocidade).
 
 
-menorDistVisita(Origem,LstPoi,Solucao,Custo):-aStar(Origem,Solucao4,Custo,LstPoi),
-											 remove_duplicates2(Solucao4,Solucao),
-											 write('Caminho com menor Quilometragem:'),
-											 imprime(Solucao),nl,!.
-											 
-aStar(_,[],0,[]).
-
-aStar(Origem,Solucao,Custo,[Destino|LstPoi]):-
-			estimativa(Origem,Destino,Estimativa),
-			aStar2(Destino,[(Estimativa,0,[Origem])],Solucao1,Custo1),!,
-			aStar(Destino,Solucao2,Custo2,LstPoi),
-			Custo is Custo1+Custo2,
-			append(Solucao1,Solucao2,Solucao),!.
-			
 estimativa(N1,N2,Valor):-
-			rua(N1,X1,Y1,_),
-			rua(N2,X2,Y2,_),
+			noL(N1,X1,Y1,_),
+			noL(N2,X2,Y2,_),
 			distancia(X1,Y1,X2,Y2,Valor).
 
-											 
-
-%----------------------------------------------Menor Duracao da Visita-------------------------------------------------
-
-%distancia(km)
-%tempo(minutos)
-
-menorDurVisita(Origem,LstPoi,Solucao,Custo,Velocidade):-aStar3(Origem,Solucao4,Custo2,LstPoi,Velocidade),
-														remove_duplicates2(Solucao4,Solucao),
-														write('Caminho com menor Duracao:'),
-														imprime(Solucao),nl,
-														write('Duracao:'),
-														Custo is Custo2*60,
-														write(Custo),write('minutos'),nl,!.
-
-aStar3(_,[],0,[],_).
-
-aStar3(Origem,Solucao,Custo,[Destino|LstPoi],Velocidade):-
-			estimativaDur(Origem,Destino,Estimativa,Velocidade),
-			aStarMnorDur(Destino,[(Estimativa,0,[Origem])],Solucao1,Custo1,Velocidade),!,
-			aStar3(Destino,Solucao2,Custo2,LstPoi,Velocidade),
-			Custo is Custo1+Custo2,
-			append(Solucao1,Solucao2,Solucao),!.
-
-estimativaDur(N1,N2,Valor,Velocidade):-
-			rua(N1,X1,Y1,_),
-			rua(N2,X2,Y2,_),
+estimativaDur(N1,N2,Valor,Velocidade):-!,
+			noL(N1,X1,Y1,_),
+			noL(N2,X2,Y2,_),
 			distancia(X1,Y1,X2,Y2,Valor2),
-			converte(Valor2,Velocidade,Valor3),
-			poi(N2,_,_,_,TmpVis),
-			Valor is (Valor3+(TmpVis/60)).
-
-
-aStarMnorDur(Destino,[(_,Custo,[Destino|T])|_],Solucao,Custo,_):-
-					reverse([Destino|T],Solucao),!.
-
-aStarMnorDur(Destino,[(_,Custo,[H|T])|Resto],Solucao,CustoSol,Velocidade):-
-			findall((CEC,C,[X,H|T]),
-					(	Destino\==H,
-						(liga(H,X,CX);liga(X,H,CX)),poi(X,_,_,_,TmpVis),
-						\+ member(X,[H|T]),
-						C is ((CX/ Velocidade)+(TmpVis/60))+Custo,
-						estimativaDur(X,Destino,Est,Velocidade),
-						CEC is Est + C),
-					Novos),
-			append(Novos,Resto,Todos),
-			sort(Todos,LS),
-			aStarMnorDur(Destino,LS,Solucao,CustoSol,Velocidade).
-
-
------------------------------------------Geração de  Visitas de 4 ou 8 horas----------------------------------------
-
-
-
-
-
-
-
-
+			converte(Valor2,Velocidade,Valor).
+			
 
 
 
