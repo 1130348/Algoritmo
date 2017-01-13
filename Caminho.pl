@@ -128,7 +128,7 @@ poi(12,'Casa do Infante',3,17,15,1).
 poi(13,'Alfandega do Porto',4,16,10,1).
 poi(14,'Teatro Rivoli',6,32,26,1).
 poi(15,'Rotunda da Boavista',2,10,16,1).
-poi(16,'Marques',2,27,30,1).
+poi(16,'Mercado Ferreira Borges',2,27,30,1).
 poi(17,'Jardim Botanico',2,11,60,1).
 poi(18,'Sealife Matosinhos',3,1,120,1).
 poi(19,'Livralia Lello',4,15,40,1).
