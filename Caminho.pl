@@ -113,7 +113,7 @@ liga(36,37,1).
 
 %poi(id,descricao,categoria,idLocal,DurVisita,idHorario).
 
-poi(1,'Estádio do Dragão',1,30,45,1). 
+poi(1,'Estadio do Dragao',1,30,45,1). 
 poi(2,'Casa da Música',5,10,35,1).
 poi(3,'Torre dos Clérigos',4,31,15,1).
 poi(4,'Estação Ferroviária de Porto São Bento',4,19,30,1).
@@ -152,8 +152,8 @@ rect([(X,_)|LstFinal5],LstFinal):-rect(LstFinal5,LstFinal1),
 								  add(X,LstFinal1,LstFinal),!.
 
 calcEstimativa(_,[],[]).
-calcEstimativa(Orig,[P|ListPts],LstFinal):-poi(P,_,_,Dest,_,_),(liga(Orig,Dest,Valor);estimativa(Orig,Dest,Valor)),calcEstimativa(Orig,ListPts,LstFinal1),!,
-											add((P,Valor),LstFinal1,LstFinal),!.
+calcEstimativa(Orig,[P|ListPts],LstFinal):-((P=Orig,Valor is 0);poi(P,_,_,Dest,_,_),(liga(Orig,Dest,Valor);estimativa(Orig,Dest,Valor))),calcEstimativa(Orig,ListPts,LstFinal1),!,
+										   add((P,Valor),LstFinal1,LstFinal),!.
 
 quick_sort(List,Sorted):-q_sort(List,[],Sorted).
 q_sort([],Acc,Acc).
@@ -202,7 +202,7 @@ menorDurVisita(Cx,Cy,LstPoi,Solucao,Custo,Velocidade,DurVisita):-IdOrigem is 0,
 
 
 																  
-aStar3(_,[],0,CustoAux,_,_,DurVisita):-(CustoAux>=DurVisita-0.5,CustoAux=<DurVisita+0.5),!.
+aStar3(_,[],0,CustoAux,_,_,DurVisita):-(CustoAux>=DurVisita-1,CustoAux=<DurVisita+1),!.
 
 aStar3(Origem,Solucao,Custo,CustoAux,[IdPoi|LstPois],Velocidade,DurVisita):-
 														poi(IdPoi,_,_,Dest,Dur,_),
@@ -269,7 +269,7 @@ aStar2(Destino,[(_,Custo,[H|T])|Resto],Solucao,CustoSol):-
 			aStar2(Destino,LS,Solucao,CustoSol).
 			
 distancia(X1,Y1,X2,Y2,Distancia):-Distancia is (((X1-X2)*(X1-X2)+(Y1-Y2)*(Y1-Y2))).
-converte(Distancia,Velocidade,Duracao):-Duracao is (Distancia)/(Velocidade).
+converte(Distancia,Velocidade,Duracao):- Duracao is (Distancia)/(Velocidade).
 
 
 estimativa(N1,N2,Valor):-

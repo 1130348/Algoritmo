@@ -10,8 +10,6 @@
 :- use_module(library(http/ json)).
 :- use_module(library(http/ json_convert)).
 :- use_module(library(http/ http_json)).
-:- use_module(library(http/ http_unix_daemon)).
-:- initialization http_daemon.
 :- ensure_loaded('Caminho.pl').
 
 %:- thread_pool_create(visita, 5, []).
@@ -20,10 +18,19 @@
 
 server(Port) :-http_server(http_dispatch, [port(Port),workers(10),timeout(infinite)]).
 
+:- http_handler(root(.),	 welcome, []).
 :- http_handler('/getVisita', getVisita, []).
 :- http_handler('/menorDur',menorDur,[]).
 :- http_handler('/menorDist',menorDist,[]).
 
+
+
+welcome(Request):-reply_html_page(title('LAPR5 2016_2017'),
+				 [ h1('Módulo de ALGAV'),
+				 p(['API ALGAV']),
+			     p(['Caminho Menor Distancia']),
+			     p(['Caminho Menor Duracao']),
+			     p(['Gerar uma visita de 4 ou 8 horas'])]).
 
 %-----------------------------------------------------Gera Visita-------------------------------------------------------------
 
