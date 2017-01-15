@@ -128,7 +128,7 @@ poi(12,'Casa do Infante',3,17,15,1).
 poi(13,'Alfandega do Porto',4,16,10,1).
 poi(14,'Teatro Rivoli',6,32,26,1).
 poi(15,'Rotunda da Boavista',2,10,16,1).
-poi(16,'Mercado Ferreira Borges',2,27,30,1).
+poi(16,'Marques',2,27,30,1).
 poi(17,'Jardim Botanico',2,11,60,1).
 poi(18,'Sealife Matosinhos',3,1,120,1).
 poi(19,'Livralia Lello',4,15,40,1).
@@ -174,8 +174,6 @@ menorDistVisita(Cx,Cy,LstPoi,Solucao,Custo):- IdOrigem is 0,
 											  sortList(Origem,LstPoi,NewList),
 											  ligaP(NewList,IdOrigem),
 											  aStar(Origem,Solucao,Custo,NewList),
-											  write('Caminho com menor Quilometragem:'),
-											  imprimeSolucao(Solucao),nl,
 											  retract(liga(IdOrigem,_,_)),
 											  retract(noL(IdOrigem,Cx,Cy,'Origem')),!.
 
@@ -198,8 +196,7 @@ menorDurVisita(Cx,Cy,LstPoi,Solucao,Custo,Velocidade,DurVisita):-IdOrigem is 0,
 															     assertz(noL(IdOrigem,Cx,Cy,'Origem')),
 																 sortList(IdOrigem,LstPoi,NewList),
 																 ligaP(NewList,IdOrigem),
-																 aStar3(IdOrigem,Solucao,Custo,0,NewList,Velocidade,DurVisita),nl,
-																 imprimeSolucao(Solucao),
+																 aStar3(IdOrigem,Solucao,Custo,0,NewList,Velocidade,DurVisita),
 																 retract(liga(IdOrigem,_,_)),
 																 retract(noL(IdOrigem,Cx,Cy,'Origem')),!.
 
@@ -208,8 +205,7 @@ menorDurVisita(Cx,Cy,LstPoi,Solucao,Custo,Velocidade,DurVisita):-IdOrigem is 0,
 aStar3(_,[],0,CustoAux,_,_,DurVisita):-(CustoAux>=DurVisita-0.5,CustoAux=<DurVisita+0.5),!.
 
 aStar3(Origem,Solucao,Custo,CustoAux,[IdPoi|LstPois],Velocidade,DurVisita):-
-														poi(IdPoi,X,_,Dest,Dur,_),
-														write(-----),write(X),write(---),nl,
+														poi(IdPoi,_,_,Dest,Dur,_),
 														estimativaDur(Origem,Dest,Estimativa,Velocidade),
 														aStarMnorDur(Dest,[(Estimativa,0,[Origem])],Solucao1,Custo1,Velocidade),!,
 														Custo5 is CustoAux+(Custo1)+(Dur/60),
@@ -217,7 +213,7 @@ aStar3(Origem,Solucao,Custo,CustoAux,[IdPoi|LstPois],Velocidade,DurVisita):-
 														Custo is (Custo1+(Custo2)+(Dur/60)),
 														checkRepetedElements(Solucao1,Solucao2,Solucao3),
 														append(Solucao3,Solucao2,Solucao),!.
-aStar3(_,[],0,_,[],_,_):-write('finish').
+aStar3(_,[],0,_,[],_,_).
 
 
 aStarMnorDur(Destino,[(_,Custo,[Destino|T])|_],Solucao,Custo,_):-
@@ -239,7 +235,7 @@ aStarMnorDur(Destino,[(_,Custo,[H|T])|Resto],Solucao,CustoSol,Velocidade):-
 %---------------------------------------------------------GeraVisita------------------------------------------------------------------------			
 
 geraVisita(Cx,Cy,Solucao,Custo,Duracao,Velocidade):- findall(X,poi(X,_,_,_,_,_),List),
-													 menorDurVisita(Cx,Cy,List,Solucao,Custo,Velocidade,Duracao),nl,nl,!.
+													 menorDurVisita(Cx,Cy,List,Solucao,Custo,Velocidade,Duracao),!.
 									  
 													  
 								
@@ -260,10 +256,6 @@ getListLocals([P|LstPoi],NewList):-poi(P,_,_,Id,_,_),getListLocals(LstPoi,NewLis
 
 add(X,[],[X]).
 add(X,[Y|Tail],[Y|Tail1]):-add(X,Tail,Tail1).
-
-imprimeSolucao([]).													  
-imprimeSolucao([X|Solucao]):-noL(X,_,_,Y),write(Y),write(','),nl,nl,imprimeSolucao(Solucao),!.	
-
 
 aStar2(Destino,[(_,Custo,[Destino|T])|_],Solucao,Custo):-
 					reverse([Destino|T],Solucao),!.
